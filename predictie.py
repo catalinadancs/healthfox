@@ -9,7 +9,7 @@ import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
 import matplotlib.pyplot as plt  # data visualization
 import seaborn as sns  # statistical data visualization
 import pandas as pd
-import pickle
+import joblib
 
 # Încărcare fișier CSV
 dataset = pd.read_csv('diabet.csv')
@@ -78,36 +78,12 @@ feature_scores = pd.Series(clf.feature_importances_,
 
 feature_scores
 
-# Creating a seaborn bar plot
-sns.barplot(x=feature_scores, y=feature_scores.index)
 
-# Add labels to the graph
-plt.xlabel('Feature Importance Score')
-plt.ylabel('Features')
+# Salvarea modelului antrenat într-un fișier folosind joblib
+joblib.dump(rfc, 'model.joblib')
 
-# Add title to the graph
-plt.title("Visualizing Important Features")
+# Încărcarea modelului antrenat din fișier folosind joblib
+loaded_model = joblib.load('model.joblib')
 
-# Visualize the graph
-plt.show()
-
-# Print the Confusion Matrix and slice it into four pieces
-cm = confusion_matrix(y_test, y_pred)
-print('Confusion matrix\n\n', cm)
-print(classification_report(y_test, y_pred))
-
-# visualize confusion matrix with seaborn heatmap
-cm_matrix = pd.DataFrame(data=cm, columns=['Actual Positive:1', 'Actual Negative:0'],
-                         index=['Predict Positive:1', 'Predict Negative:0'])
-sns.heatmap(cm_matrix, annot=True, fmt='d', cmap='YlGnBu')
-
-# Save the trained model to a file
-with open('model.pkl', 'wb') as file:
-    pickle.dump(rfc, file)
-
-# Load the saved model from file
-with open('model.pkl', 'rb') as file:
-    loaded_model = pickle.load(file)
-
-# Use the loaded model for predictions
+# Exemplu de predicție pe setul de testare
 loaded_model.predict(X_test)

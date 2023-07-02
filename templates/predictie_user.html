@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predictie Utilizator</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#predictionForm').submit(function(event) {
+                event.preventDefault();
+                var form = $(this);
+                var url = form.attr('action');
+                var method = form.attr('method');
+                var formData = form.serialize();
+
+                $.ajax({
+                    url: url,
+                    type: method,
+                    data: formData,
+                    success: function(response) {
+                        // Afișați rezultatul într-un element cu id-ul 'prediction'
+                        $('#prediction').text(response);
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(error);
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Predictie Utilizator</h1>
+    <form id="predictionForm" action="/predictie_user.html" method="POST">
+        <label for="gender">Gen:</label>
+        <select id="gender" name="gender">
+            <option value="Male">Masculin</option>
+            <option value="Female">Feminin</option>
+        </select>
+        <br>
+        <label for="age">Vârstă:</label>
+        <input type="number" id="age" name="age" required>
+        <br>
+        <label for="hypertension">Hipertensiune:</label>
+        <input type="number" id="hypertension" name="hypertension" required>
+        <br>
+        <label for="heart_disease">Boli de inimă:</label>
+        <input type="number" id="heart_disease" name="heart_disease" required>
+        <br>
+        <label for="smoking_history">Istoric fumat:</label>
+        <select id="smoking_history" name="smoking_history">
+            <option value="never">Niciodată</option>
+            <option value="No Info">Fără informații</option>
+            <option value="current">Curent</option>
+            <option value="ever">Vreodată</option>
+            <option value="not current">Nu în prezent</option>
+            <option value="former">Anterior</option>
+        </select>
+        <br>
+        <label for="bmi">BMI:</label>
+        <input type="number" id="bmi" name="bmi" step="0.01" required>
+        <br>
+        <label for="hba1c_level">Nivel HbA1c:</label>
+        <input type="number" id="hba1c_level" name="hba1c_level" step="0.01" required>
+        <br>
+        <label for="blood_glucose_level">Nivel glucoză în sânge:</label>
+        <input type="number" id="blood_glucose_level" name="blood_glucose_level" step="0.01" required>
+        <br>
+        <button type="submit">Prezice</button>
+    </form>
+
+    <h2>Rezultat:</h2>
+    <p id="prediction"></p>
+</body>
+</html>

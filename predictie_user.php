@@ -1,11 +1,43 @@
 <?php
-session_start();
+// Verificați dacă s-a făcut submit la formular
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Obțineți valorile trimise din formular
+    $gender = $_POST["gender"];
+    $age = $_POST["age"];
+    $hypertension = $_POST["hypertension"];
+    $heart_disease = $_POST["heart_disease"];
+    $smoking_history = $_POST["smoking_history"];
+    $bmi = $_POST["bmi"];
+    $hba1c_level = $_POST["hba1c_level"] ?? null;
+    $blood_glucose_level = $_POST["blood_glucose_level"];
 
-if (!isset($_SESSION['user_id'])) {
-    // Redirect the user to the login page or show an access denied message
-    header("Location: login.php");
-    exit();
+    // Definirea funcției pentru a rula scriptul Python și a obține predicția
+    function runPythonScript($input_data) {
+        // Comanda pentru a rula scriptul Python cu argumentele necesare
+        $command = 'python3 predictie.py ' . escapeshellarg(json_encode($input_data));
+        // Execută comanda și obține rezultatul
+        $output = shell_exec($command);
+        // Returnează rezultatul
+        return $output;
+    }
+
+    // Definirea datelor de intrare pentru predicție
+    $input_data = array(
+        "gender" => $_POST["gender"],
+        "age" => $_POST["age"],
+        "hypertension" => $_POST["hypertension"],
+        "heart_disease" => $_POST["heart_disease"],
+        "smoking_history" => $_POST["smoking_history"],
+        "bmi" => $_POST["bmi"],
+        "hba1c_level" => $_POST["hba1c_level"] ?? null,
+        "blood_glucose_level" => $_POST["blood_glucose_level"]
+    );
+        // Realizarea predicției folosind funcția Python
+        $prediction = runPythonScript($input_data);
+        // Afișarea rezultatului predicției
+        echo "Rezultatul predicției este: " . $prediction;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +85,7 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="row">
                     <div class="col-6 col-lg-5">
                         <div class="colm-form">
-                        <form action="rezultate.php" method="POST">
+                            <form action="predictie_user.php" method="POST">
                             <div class="mb-3 mt-3">
                                 <label for="gender" class="form-label">Gender:</label>
                                 <select name="gender">
@@ -121,7 +153,7 @@ if (!isset($_SESSION['user_id'])) {
                             </script>
 
                             <input type="submit" type="submit" class="btn btn-primary" value="Predict">
-                        </form>
+                            </form>
                         </div>
                     </div>
                 </div>
