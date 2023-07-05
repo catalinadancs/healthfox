@@ -8,37 +8,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $heart_disease = $_POST["heart_disease"];
     $smoking_history = $_POST["smoking_history"];
     $bmi = $_POST["bmi"];
-    $hba1c_level = $_POST["hba1c_level"] ?? null;
+    $hba1c_level = $_POST["include_hba1c"] ? $_POST["hba1c_level"] : null;
     $blood_glucose_level = $_POST["blood_glucose_level"];
 
     // Definirea funcției pentru a rula scriptul Python și a obține predicția
     function runPythonScript($input_data) {
-        // Comanda pentru a rula scriptul Python cu argumentele necesare
-        $command = 'python3 predictie.py ' . escapeshellarg(json_encode($input_data));
-        // Execută comanda și obține rezultatul
+        $python_path = 'C:\Users\Cata\AppData\Local\Programs\Python\Python310\python.exe'; // Update with the actual path to python3 executable
+        $python_script = __DIR__ . '/predict_diabetes.py';
+        $command = $python_path . ' ' . escapeshellarg($python_script) . ' ' . escapeshellarg($input_data);
+
+        // Execute the command and capture the output
         $output = shell_exec($command);
-        // Returnează rezultatul
+
         return $output;
     }
 
     // Definirea datelor de intrare pentru predicție
     $input_data = array(
-        "gender" => $_POST["gender"],
-        "age" => $_POST["age"],
-        "hypertension" => $_POST["hypertension"],
-        "heart_disease" => $_POST["heart_disease"],
-        "smoking_history" => $_POST["smoking_history"],
-        "bmi" => $_POST["bmi"],
-        "hba1c_level" => $_POST["hba1c_level"] ?? null,
-        "blood_glucose_level" => $_POST["blood_glucose_level"]
+        $gender,
+        $age,
+        $hypertension,
+        $heart_disease,
+        $smoking_history,
+        $bmi,
+        $hba1c_level,
+        $blood_glucose_level
     );
-        // Realizarea predicției folosind funcția Python
-        $prediction = runPythonScript($input_data);
-        // Afișarea rezultatului predicției
-        echo "Rezultatul predicției este: " . $prediction;
-}
 
+    // Realizarea predicției folosind funcția Python
+    $prediction = runPythonScript(json_encode($input_data));
+
+    // Afișarea rezultatului predicției
+    if ($prediction !== false) {
+        // Successful execution, redirect to result.php
+        header("Location: result.php?gender=$gender&age=$age&hypertension=$hypertension&heart_disease=$heart_disease&smoking_history=$smoking_history&bmi=$bmi&hba1c_level=$hba1c_level&blood_glucose_level=$blood_glucose_level&prediction=".urlencode($prediction));
+    } else {
+        // Error executing Python script, redirect to an error page
+        header("Location: error.php");
+    }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -77,9 +87,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </nav>
+    <main class="d-flex">
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="user.php" class="nav-link link-body-emphasis">Home</a>
+      </li>
+      <li>
+        <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
+      </li>
+      <li>
+        <a href="predictie_user.php" class="nav-link active" aria-current="page">Probabilitatea de a face diabet</a>
+      </li>
+      <li>
+        <a href="specialist.php" class="nav-link link-body-emphasis">Discuta cu un specialist</a>
+      </li>
+
+    </ul>
+  </div>
 
     <div class="bg-light">
-    <h1><a href="user.php" style="text-decoration: none;">🔙</a></h1>
+
 
             <div class="container">
                 <div class="row">
@@ -160,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
 
-
+    </main>
 </body>
 
 </html>

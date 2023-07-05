@@ -4,11 +4,10 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import accuracy_score
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-import numpy as np  # linear algebra
-import pandas as pd  # data processing, CSV file I/O (e.g. pd.read_csv)
-import matplotlib.pyplot as plt  # data visualization
-import seaborn as sns  # statistical data visualization
+import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 import joblib
 
 # Încărcare fișier CSV
@@ -49,6 +48,10 @@ rfc.fit(X_train, y_train)
 # Predict the Test set results
 y_pred = rfc.predict(X_test)
 
+# Convert predicted values to 'Yes' or 'No'
+prediction_labels = ['No', 'Yes']
+y_pred_labels = [prediction_labels[prediction] for prediction in y_pred]
+
 # Check accuracy score
 print('Model accuracy score with 10 decision-trees : {0:0.4f}'. format(
     accuracy_score(y_test, y_pred)))
@@ -85,5 +88,7 @@ joblib.dump(rfc, 'model.joblib')
 # Încărcarea modelului antrenat din fișier folosind joblib
 loaded_model = joblib.load('model.joblib')
 
-# Exemplu de predicție pe setul de testare
-loaded_model.predict(X_test)
+# Example prediction on the test set
+y_pred_test = loaded_model.predict(X_test)
+y_pred_test_labels = [prediction_labels[prediction]
+                      for prediction in y_pred_test.astype(int)]

@@ -48,8 +48,25 @@ if (!isset($_SESSION['user_id'])) {
         </div>
     </nav>
 
+    <main class="d-flex">
+  <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
+    <ul class="nav nav-pills flex-column mb-auto">
+      <li class="nav-item">
+        <a href="user.php" class="nav-link link-body-emphasis">Home</a>
+      </li>
+      <li>
+        <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
+      </li>
+      <li>
+        <a href="predictie_user.php" class="nav-link link-body-emphasis">Probabilitatea de a face diabet</a>
+      </li>
+      <li>
+        <a href="specialist.php" class="nav-link active" aria-current="page">Discuta cu un specialist</a>
+      </li>
 
-  <h1> <a href="user.php" style="text-decoration: none;">🔙</a></h1>
+    </ul>
+  </div>
+
   <div class="container">
         <table class="table table-striped">
             <thead>
@@ -91,7 +108,7 @@ if (!isset($_SESSION['user_id'])) {
         </table>
   </div>
 </div>
-
+    </main>
 
 </body>
 

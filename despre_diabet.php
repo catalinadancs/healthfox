@@ -49,10 +49,10 @@ if (!isset($_SESSION['user_id'])) {
   <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="user.php" class="nav-link active" aria-current="page">Home</a>
+        <a href="user.php" class="nav-link link-body-emphasis">Home</a>
       </li>
       <li>
-        <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
+        <a href="despre_diabet.php" class="nav-link active" aria-current="page">Despre diabet</a>
       </li>
       <li>
         <a href="predictie_user.php" class="nav-link link-body-emphasis">Probabilitatea de a face diabet</a>
@@ -63,40 +63,6 @@ if (!isset($_SESSION['user_id'])) {
 
     </ul>
   </div>
-
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Despre diabet</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="despre_diabet.php" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Probabilitatea de a face diabet</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="predictie_user.php" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Discuta cu un specialist</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="specialist.php" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-
-
-</div>
-
     </main>
 </body>
-
 </html>

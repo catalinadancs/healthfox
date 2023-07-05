@@ -30,6 +30,7 @@ if (!isset($_SESSION['user_id'])) {
         rel="stylesheet" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -49,13 +50,13 @@ if (!isset($_SESSION['user_id'])) {
   <div class="d-flex flex-column flex-shrink-0 p-3 bg-body-tertiary" style="width: 280px;">
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="user.php" class="nav-link active" aria-current="page">Home</a>
+        <a href="user.php" class="nav-link link-body-emphasis">Home</a>
       </li>
       <li>
         <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
       </li>
       <li>
-        <a href="predictie_user.php" class="nav-link link-body-emphasis">Probabilitatea de a face diabet</a>
+        <a href="predictie_user.php" class="nav-link active" aria-current="page">Probabilitatea de a face diabet</a>
       </li>
       <li>
         <a href="specialist.php" class="nav-link link-body-emphasis">Discuta cu un specialist</a>
@@ -64,39 +65,76 @@ if (!isset($_SESSION['user_id'])) {
     </ul>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-2 g-4">
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Despre diabet</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="despre_diabet.php" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Probabilitatea de a face diabet</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="predictie_user.php" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title">Discuta cu un specialist</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="specialist.php" class="btn btn-primary">Go somewhere</a>
-      </div>
-    </div>
-  </div>
 
 
-</div>
 
-    </main>
+
+
+    <div class="container">
+    <div class="container">
+        <div class="row pt-3">
+            <div class="col">
+                <div class="card">
+                    <span>
+                    <h1> <a href="predictie_user.php" style="text-decoration: none;">🔙</a></h1>
+    <h1 class="card-title text-center">Rezultate</h1>
+                    </span>
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Valori</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+            <td>Gender</td>
+            <td><?php echo $_GET["gender"]; ?></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><?php echo $_GET["age"]; ?></td>
+        </tr>
+        <tr>
+            <td>Hypertension</td>
+            <td><?php echo $_GET["hypertension"]; ?></td>
+        </tr>
+        <tr>
+            <td>Heart Disease</td>
+            <td><?php echo $_GET["heart_disease"]; ?></td>
+        </tr>
+        <tr>
+            <td>Smoking History</td>
+            <td><?php echo $_GET["smoking_history"]; ?></td>
+        </tr>
+        <tr>
+            <td>BMI</td>
+            <td><?php echo $_GET["bmi"]; ?></td>
+        </tr>
+        <tr>
+            <td>HbA1c Level</td>
+            <td><?php echo $_GET["hba1c_level"]; ?></td>
+        </tr>
+        <tr>
+            <td>Blood Glucose Level</td>
+            <td><?php echo $_GET["blood_glucose_level"]; ?></td>
+        </tr>
+        <tr>
+        <td>Prediction:</td>
+    <td>
+    <?php
+        $blood_glucose_level = intval($_GET["blood_glucose_level"]);
+        $prediction = $blood_glucose_level > 215 ? 'Yes' : 'No';
+        echo "<pre>$prediction</pre>";
+    ?></td>
+        </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
