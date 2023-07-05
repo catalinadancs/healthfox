@@ -115,56 +115,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="colm-form">
                             <form action="predictie_user.php" method="POST">
                             <div class="mb-3 mt-3">
-                                <label for="gender" class="form-label">Gender:</label>
+                                <label for="gender" class="form-label">Gen</label>
                                 <select name="gender">
-                                    <option value="1">Female</option>
-                                    <option value="0">Male</option>
+                                    <option value="1">Femeie</option>
+                                    <option value="0">Barbat</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="age" class="form-label">Age:</label>
+                                <label for="age" class="form-label">Varsta:</label>
                                 <input type="number" name="age" required><br>
                             </div>
                             <div class="mb-3">
-                                <label for="hypertension" class="form-label">Hypertension:</label>
+                                <label for="hypertension" class="form-label">Hipertensiune arteriala:</label>
                                 <select name="hypertension">
-                                    <option value="0">No</option>
-                                    <option value="1">Yes</option>
+                                    <option value="0">Nu</option>
+                                    <option value="1">Da</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="heart_disease" class="form-label">Heart Disease:</label>
+                                <label for="heart_disease" class="form-label">Probleme cardiace:</label>
                                 <select name="heart_disease">
-                                    <option value="0">No</option>
-                                    <option value="1">Yes</option>
+                                    <option value="0">Nu</option>
+                                    <option value="1">Da</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="smoking_history" class="form-label">Smoking History:</label>
+                                <label for="smoking_history" class="form-label">Istoricul fumatului:</label>
                                 <select name="smoking_history">
-                                    <option value="0">Never</option>
-                                    <option value="1">No Info</option>
-                                    <option value="2">Current</option>
-                                    <option value="3">Ever</option>
-                                    <option value="4">Not Current</option>
-                                    <option value="5">Former</option>
+                                    <option value="0">Niciodata</option>
+                                    <option value="1">Fara informatii</option>
+                                    <option value="2">Curent</option>
+                                    <option value="3">In trecut</option>
+                                    <option value="4">Nu in prezent</option>
+                                    <option value="5">Fost fumator</option>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="bmi" class="form-label">BMI:</label>
+                                <label for="bmi" class="form-label">Indicele de Masă Corporală(BMI):</label>
                                 <input type="number" name="bmi" required><br>
                             </div>
                             <div class="mb-3">
                                 <input type="checkbox" id="include_hba1c" name="include_hba1c" value="1">
-                                <label for="include_hba1c">Include HbA1c Level:</label><br>
+                                <label for="include_hba1c">Adauga nivelul de hemoglobină glicozilată (HbA1c):</label><br>
 
                                 <div id="hba1c_container" style="display: none;">
-                                    <label>HbA1c Level:</label>
+                                    <label>Nivelul de HbA1c:</label>
                                     <input type="number" name="hba1c_level"><br>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label>Blood Glucose Level:</label>
+                                <label>Glicemie:</label>
                                 <input type="number" name="blood_glucose_level" required><br>
                             </div>
                             <script>
