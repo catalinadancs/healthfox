@@ -102,23 +102,23 @@
                                     <input type="text" class="form-control" id="nume" name="nume" placeholder="Nume" required />
                                 </div>
                                 <div class="mb-3">
-                                    <label for="prenume" class="form-label">prenume</label>
+                                    <label for="prenume" class="form-label">Prenume</label>
                                     <textarea class="form-control" id="prenume" name="prenume" placeholder="prenume" required></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="specializare" class="form-label">specializare</label>
+                                    <label for="specializare" class="form-label">Specializare</label>
                                     <textarea class="form-control" id="specializare" name="specializare" placeholder="specializare" required></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="clinica" class="form-label">clinica</label>
+                                    <label for="clinica" class="form-label">Clinica</label>
                                     <textarea class="form-control" id="clinica" name="clinica" placeholder="clinica" required></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="locatie" class="form-label">locatie</label>
+                                    <label for="locatie" class="form-label">Locatie</label>
                                     <textarea class="form-control" id="locatie" name="locatie" placeholder="locatie" required></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="telefon" class="form-label">telefon</label>
+                                    <label for="telefon" class="form-label">Telefon</label>
                                     <textarea class="form-control" id="telefon" name="telefon" placeholder="telefon" required></textarea>
                                 </div>
 

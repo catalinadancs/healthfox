@@ -53,7 +53,10 @@ if (!isset($_SESSION['user_id'])) {
         <a href="user.php" class="nav-link link-body-emphasis">Home</a>
       </li>
       <li>
-        <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
+        <a href="despre_diabet1.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 1</a>
+      </li>
+      <li>
+        <a href="despre_diabet2.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 2</a>
       </li>
       <li>
         <a href="predictie_user.php" class="nav-link active" aria-current="page">Probabilitatea de a face diabet</a>
@@ -65,76 +68,68 @@ if (!isset($_SESSION['user_id'])) {
     </ul>
   </div>
 
-
-
-
-
-
-    <div class="container">
     <div class="container">
         <div class="row pt-3">
             <div class="col">
                 <div class="card">
                     <span>
                     <h1> <a href="predictie_user.php" style="text-decoration: none;">🔙</a></h1>
-    <h1 class="card-title text-center">Rezultate</h1>
+                    <h1 class="card-title text-center">Rezultate</h1>
                     </span>
         <div class="table-responsive">
             <table class="table table-striped">
                 <thead>
                     <tr>
                         <th></th>
-                        <th>Valori</th>
-
+                        <th>Valori:</th>
                     </tr>
                 </thead>
                 <tbody>
                 <tr>
-            <td>Gender</td>
-            <td><?php echo $_GET["gender"]; ?></td>
-        </tr>
-        <tr>
-            <td>Age</td>
-            <td><?php echo $_GET["age"]; ?></td>
-        </tr>
-        <tr>
-            <td>Hypertension</td>
-            <td><?php echo $_GET["hypertension"]; ?></td>
-        </tr>
-        <tr>
-            <td>Heart Disease</td>
-            <td><?php echo $_GET["heart_disease"]; ?></td>
-        </tr>
-        <tr>
-            <td>Smoking History</td>
-            <td><?php echo $_GET["smoking_history"]; ?></td>
-        </tr>
-        <tr>
-            <td>BMI</td>
-            <td><?php echo $_GET["bmi"]; ?></td>
-        </tr>
-        <tr>
-            <td>HbA1c Level</td>
-            <td><?php echo $_GET["hba1c_level"]; ?></td>
-        </tr>
-        <tr>
-            <td>Blood Glucose Level</td>
-            <td><?php echo $_GET["blood_glucose_level"]; ?></td>
-        </tr>
-        <tr>
-        <td>Prediction:</td>
-    <td>
-    <?php
-        $blood_glucose_level = intval($_GET["blood_glucose_level"]);
-        $prediction = $blood_glucose_level > 215 ? 'Yes' : 'No';
-        echo "<pre>$prediction</pre>";
-    ?></td>
-        </tr>
+                    <td>Gen:</td>
+                    <td><?php echo $_GET["gender"]; ?></td>
+                </tr>
+                <tr>
+                    <td>Varsta:</td>
+                    <td><?php echo $_GET["age"]; ?></td>
+                </tr>
+                <tr>
+                    <td>Hipertensiune arteriala:</td>
+                    <td><?php echo $_GET["hypertension"]; ?></td>
+                </tr>
+                <tr>
+                    <td>Probleme cardiace:</td>
+                    <td><?php echo $_GET["heart_disease"]; ?></td>
+                </tr>
+                <tr>
+                    <td>Istoricul fumatului:</td>
+                    <td><?php echo $_GET["smoking_history"]; ?></td>
+                </tr>
+                <tr>
+                    <td>IMC:</td>
+                    <td><?php echo $_GET["bmi"]; ?></td>
+                </tr>
+                <tr>
+                    <td>Nivelul HbA1c:</td>
+                    <td><?php echo $_GET["hba1c_level"]; ?></td>
+                </tr>
+                <tr>
+                    <td>Glicemie:</td>
+                    <td><?php echo $_GET["blood_glucose_level"]; ?></td>
+                </tr>
+                <tr>
+                <td>Predictie:</td>
+                <td>
+                <?php
+                    $blood_glucose_level = intval($_GET["blood_glucose_level"]);
+                    $prediction = $blood_glucose_level > 215 ? 'Da' : 'Nu';
+                    echo "<pre>$prediction</pre>";
+                ?></td>
+            </tr>
                 </tbody>
             </table>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/js/bootstrap.bundle.min.js"></script>
+            </div></div></div></main>
 </body>
 </html>

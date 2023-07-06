@@ -52,7 +52,10 @@ if (!isset($_SESSION['user_id'])) {
         <a href="user.php" class="nav-link active" aria-current="page">Home</a>
       </li>
       <li>
-        <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
+        <a href="despre_diabet1.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 1</a>
+      </li>
+      <li>
+        <a href="despre_diabet2.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 2</a>
       </li>
       <li>
         <a href="predictie_user.php" class="nav-link link-body-emphasis">Probabilitatea de a face diabet</a>
@@ -68,9 +71,18 @@ if (!isset($_SESSION['user_id'])) {
   <div class="col">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Despre diabet</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="despre_diabet.php" class="btn btn-primary">Go somewhere</a>
+        <h5 class="card-title">Diabet zaharat de tip 1</h5>
+        <p class="card-text">Tot ce trebuie sa stii despre diabetul zaharat de tip 1.</p>
+        <a href="despre_diabet1.php" class="btn btn-primary">Afla mai multe</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Diabet zaharat de tip 2</h5>
+        <p class="card-text">Tot ce trebuie sa stii despre diabetul zaharat de tip 2.</p>
+        <a href="despre_diabet2.php" class="btn btn-primary">Afla mai multe</a>
       </div>
     </div>
   </div>
@@ -78,8 +90,8 @@ if (!isset($_SESSION['user_id'])) {
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Probabilitatea de a face diabet</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="predictie_user.php" class="btn btn-primary">Go somewhere</a>
+
+        <a href="predictie_user.php" class="btn btn-primary">Verifica probabilitatea</a>
       </div>
     </div>
   </div>
@@ -87,8 +99,8 @@ if (!isset($_SESSION['user_id'])) {
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">Discuta cu un specialist</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="specialist.php" class="btn btn-primary">Go somewhere</a>
+
+        <a href="specialist.php" class="btn btn-primary">Programeaza o consultatie</a>
       </div>
     </div>
   </div>

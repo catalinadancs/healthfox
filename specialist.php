@@ -55,7 +55,10 @@ if (!isset($_SESSION['user_id'])) {
         <a href="user.php" class="nav-link link-body-emphasis">Home</a>
       </li>
       <li>
-        <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
+        <a href="despre_diabet1.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 1</a>
+      </li>
+      <li>
+        <a href="despre_diabet2.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 2</a>
       </li>
       <li>
         <a href="predictie_user.php" class="nav-link link-body-emphasis">Probabilitatea de a face diabet</a>

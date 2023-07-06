@@ -67,7 +67,7 @@
         <div class="container px-5">
             <div class="row gx-5 justify-content-center">
                 <div class="col-xl-8">
-                    <div class="h2 fs-1 text-white mb-4">....</div>
+                    <div class="h2 fs-1 text-white mb-4">"Investește în sănătatea ta acum sau vei investi în boală mai târziu." - Tony Robbins</div>
 
                 </div>
             </div>
@@ -82,7 +82,7 @@
                 </div>
                 <div class="col-12 col-lg-5">
                     <h2 class="display-4 lh-1 mb-4">Despre noi</h2>
-                    <p class="lead fw-normal text-muted mb-5 mb-lg-0">...</p>
+                    <p class="lead fw-normal text-muted mb-5 mb-lg-0">Prin intermediul resurselor noastre, ne dorim să oferim suport și informații relevante persoanelor diagnosticate cu diabet, precum și celor interesați de prevenirea acestei afecțiuni. Suntem dedicați în a fi o sursă de încredere și de sprijin pentru comunitatea noastră, încurajând schimbul de cunoștințe și de experiențe.</p>
                 </div>
 
 
@@ -94,8 +94,13 @@
         <div class="container px-5">
             <div class="row gx-5 align-items-center justify-content-center justify-content-lg-between">
                 <div class="col-12 col-lg-5">
-                    <h2 class="display-4 lh-1 mb-4">Misiunea noastra</h2>
-                    <p class="lead fw-normal text-muted mb-5 mb-lg-0">...</p>
+                    <h2 class="display-4 lh-1 mb-4">Misiunea noastră</h2>
+                    <p class="lead fw-normal text-muted mb-5 mb-lg-0">Misiunea noastră constă în conștientizarea gravității diabetului în lume, furnizarea unei posibile predicții privind riscul de a dezvolta această afecțiune și informarea publicului cu privire la diabet. Scopul nostru este de a contribui la creșterea nivelului de conștientizare și de cunoaștere în rândul oamenilor, astfel încât să poată lua măsuri preventive și să se implice într-un stil de viață sănătos.
+
+<br><br>Ne străduim să educăm și să informăm oamenii cu privire la impactul diabetului asupra sănătății, riscurile asociate și importanța gestionării adecvate a acestei afecțiuni. Utilizând tehnologii moderne și date științifice relevante, ne propunem să oferim oportunitatea de a estima probabilitatea unei persoane de a dezvolta diabetul, luând în considerare factorii de risc relevanți.
+
+<br><br>În același timp, ne străduim să promovăm importanța unui stil de viață sănătos, inclusiv a unei alimentații echilibrate, a exercițiilor fizice regulate și a monitorizării periodice a stării de sănătate. Încurajăm adoptarea unor alegeri conștiente și responsabile în ceea ce privește gestionarea diabetului și menținerea unei bune stări de sănătate în general.
+
                 </div>
                 <div class="col-sm-8 col-md-6">
                     <div class="px-5 px-sm-0"><img class="img-fluid square" src="assets/img/fox3.png" /></div>

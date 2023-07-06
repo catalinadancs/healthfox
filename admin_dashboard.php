@@ -60,25 +60,27 @@ if (!isset($_SESSION['user_id'])) {
     </ul>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+
+  <div class="row row-cols-4 row-cols-md-1 g-4">
   <div class="col">
-    <div class="card">
+    <div class="card w-400">
       <div class="card-body">
         <h5 class="card-title">Users</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="dashboard_users.php" class="btn btn-primary">Go somewhere</a>
+
+        <a href="dashboard_user.php" class="btn btn-primary">Lista useri</a>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card">
+  <div class="card w-400">
       <div class="card-body">
         <h5 class="card-title">Doctori</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <a href="dashboard_doctor.php" class="btn btn-primary">Go somewhere</a>
+
+        <a href="dachboard_doctor.php" class="btn btn-primary">Lista doctori</a>
       </div>
     </div>
   </div>
+
 
 
 

@@ -35,8 +35,7 @@ CREATE TABLE `doctori` (
 -- Dumping data for table `doctori`
 --
 
-INSERT INTO `doctori` (`id`, `nume`, `prenume`, `specializare`, `clinica`, `locatie`, `telefon`) VALUES
-(3, 'da', 'da', 'da', 'da', 'da', '2121w');
+
 
 -- --------------------------------------------------------
 
@@ -64,11 +63,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nume`, `prenume`, `username`, `email`, `parola`, `utype`) VALUES
-(1, 'Dancs', 'Catalina', 'dnxcatalina', 'catalinadancs@gmail.com', 'brutus', 'admin'),
-(3, 'da', 'da', 'da', 'da', 'da', 'admin'),
-(8, 'brutus', 'brutus', 'brutus', 'brutus@gmail.com', 'brutus', 'admin'),
-(10, 'dada', 'dada', 'dada1', 'dadaff@dd', '1234', 'user');
+
 
 --
 -- Indexes for dumped tables
@@ -98,9 +93,7 @@ ALTER TABLE `users`
 ALTER TABLE `doctori`
   MODIFY `id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4334;
 
---
--- AUTO_INCREMENT for table `rezultate`
---
+
 
 
 --

@@ -94,7 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="user.php" class="nav-link link-body-emphasis">Home</a>
       </li>
       <li>
-        <a href="despre_diabet.php" class="nav-link link-body-emphasis">Despre diabet</a>
+        <a href="despre_diabet1.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 1</a>
+      </li>
+      <li>
+        <a href="despre_diabet2.php" class="nav-link link-body-emphasis">Diabet zaharat de tip 2</a>
       </li>
       <li>
         <a href="predictie_user.php" class="nav-link active" aria-current="page">Probabilitatea de a face diabet</a>
@@ -111,11 +114,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <div class="container">
                 <div class="row">
-                    <div class="col-6 col-lg-5">
+                    <div>
                         <div class="colm-form">
                             <form action="predictie_user.php" method="POST">
                             <div class="mb-3 mt-3">
-                                <label for="gender" class="form-label">Gen</label>
+                                <label for="gender" class="form-label">Gen:</label>
                                 <select name="gender">
                                     <option value="1">Femeie</option>
                                     <option value="0">Barbat</option>
